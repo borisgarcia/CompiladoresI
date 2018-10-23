@@ -2,8 +2,9 @@
 
 void Lexer::unGetChar()
 {
-    for(int x = 0;x<cont;x++)
+    for(int x = 0;x<=cont;x++)
     {
+        printf("%c\n",currChar);
         in.unget();
     }
     text = "";
@@ -15,6 +16,7 @@ Token Lexer::getNextToken() {
     currChar = in.get();
     text = "";
     cont = 0;
+    currState = 0;
     while(1)
     {
         switch(currState){
@@ -29,6 +31,10 @@ Token Lexer::getNextToken() {
                     text += char(currChar);
                     currChar = in.get();
                     cont++;
+                }
+                else if(currChar == EOF)
+                {
+                    return Token::Eof;
                 }
                 else 
                 {
@@ -52,7 +58,9 @@ Token Lexer::getNextToken() {
                 }
                 else
                 {
-                    currState = 5;
+                    unGetChar();
+                    currChar = in.get();
+                    currState = 20;
                 }
                 break;
             case 2:
@@ -88,6 +96,7 @@ Token Lexer::getNextToken() {
                 else
                 {
                     unGetChar();
+                    currChar = in.get();
                     currState = 8;
                 }
                 break;
@@ -124,6 +133,7 @@ Token Lexer::getNextToken() {
                 else
                 {
                     unGetChar();
+                    currChar = in.get();
                     currState = 11;
                 }
                 break;
@@ -135,23 +145,24 @@ Token Lexer::getNextToken() {
             case 20:
                 if(isdigit(currChar))
                 {
-                    currState = 3;
+                    currState = 20;
                     text += char(currChar);
                     currChar = in.get();
                     cont++;
                 }
-                else 
+                else if(currChar == ' ')
                 {
-                    currState = 4;
+                    currState = 21;
+                }
+                else
+                {
+                    unGetChar(); 
+                    currChar = in.get();                  
+                    currState = 5;
                 }
                 break;
             case 21:
                 return Token::Decimal;
-            
-
-
-
-        return Token::Eof;
         }
     }
 }
