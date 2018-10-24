@@ -9,7 +9,8 @@ enum class Token
     Hexadecimal,
     Binario,
     Octal,
-    Unknown
+    Unknown,
+    Eof
 };
 
 class Lexer

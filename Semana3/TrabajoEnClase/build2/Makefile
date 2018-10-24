@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build
+CMAKE_BINARY_DIR = /home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build2
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build/CMakeFiles /home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build2/CMakeFiles /home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build2/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build2/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,32 @@ Test1/fast:
 	$(MAKE) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/build
 .PHONY : Test1/fast
 
-Lexer.o: Lexer.cpp.o
+LexerV2.o: LexerV2.cpp.o
 
-.PHONY : Lexer.o
+.PHONY : LexerV2.o
 
 # target to build an object file
-Lexer.cpp.o:
-	$(MAKE) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/Lexer.cpp.o
-.PHONY : Lexer.cpp.o
+LexerV2.cpp.o:
+	$(MAKE) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/LexerV2.cpp.o
+.PHONY : LexerV2.cpp.o
 
-Lexer.i: Lexer.cpp.i
+LexerV2.i: LexerV2.cpp.i
 
-.PHONY : Lexer.i
+.PHONY : LexerV2.i
 
 # target to preprocess a source file
-Lexer.cpp.i:
-	$(MAKE) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/Lexer.cpp.i
-.PHONY : Lexer.cpp.i
+LexerV2.cpp.i:
+	$(MAKE) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/LexerV2.cpp.i
+.PHONY : LexerV2.cpp.i
 
-Lexer.s: Lexer.cpp.s
+LexerV2.s: LexerV2.cpp.s
 
-.PHONY : Lexer.s
+.PHONY : LexerV2.s
 
 # target to generate assembly for a file
-Lexer.cpp.s:
-	$(MAKE) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/Lexer.cpp.s
-.PHONY : Lexer.cpp.s
+LexerV2.cpp.s:
+	$(MAKE) -f CMakeFiles/Test1.dir/build.make CMakeFiles/Test1.dir/LexerV2.cpp.s
+.PHONY : LexerV2.cpp.s
 
 main.o: main.cpp.o
 
@@ -186,9 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Test1"
-	@echo "... Lexer.o"
-	@echo "... Lexer.i"
-	@echo "... Lexer.s"
+	@echo "... LexerV2.o"
+	@echo "... LexerV2.i"
+	@echo "... LexerV2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

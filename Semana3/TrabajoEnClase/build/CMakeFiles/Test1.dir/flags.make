@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=c++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/boris/Escritorio/Compiladores1/Semana3/TrabajoEnClase 
+CXX_INCLUDES = -I/home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase 
 

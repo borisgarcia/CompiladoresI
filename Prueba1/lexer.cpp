@@ -4,7 +4,6 @@ void Lexer::unGetChar()
 {
     for(int x = 0;x<=cont;x++)
     {
-        printf("%c\n",currChar);
         in.unget();
     }
     text = "";

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/boris/Escritorio/Compiladores1/Semana3/TrabajoEnClase/Lexer.cpp" "/home/boris/Escritorio/Compiladores1/Semana3/TrabajoEnClase/build/CMakeFiles/test1.dir/Lexer.cpp.o"
-  "/home/boris/Escritorio/Compiladores1/Semana3/TrabajoEnClase/main.cpp" "/home/boris/Escritorio/Compiladores1/Semana3/TrabajoEnClase/build/CMakeFiles/test1.dir/main.cpp.o"
+  "/home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/LexerV2.cpp" "/home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build2/CMakeFiles/Test1.dir/LexerV2.cpp.o"
+  "/home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/main.cpp" "/home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build2/CMakeFiles/Test1.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

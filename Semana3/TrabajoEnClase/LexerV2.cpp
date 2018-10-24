@@ -1,29 +1,29 @@
-#include "Lexer.h"
+#include "LexerV2.h"
 
-Lexer::Lexer(char * path)
+LexerV2::LexerV2(char * path)
 {
     file.open(path, std::ifstream::in);
-    initLexer();
+    initLexerV2();
 }
 
-int Lexer::getNextChar()
+int LexerV2::getNextChar()
 {
     return file.get();
 }
 
-void Lexer::ungetChar()
+void LexerV2::ungetChar()
 {
     file.unget();
 }
 
-void Lexer::initLexer()
+void LexerV2::initLexerV2()
 {
     currCh = getNextChar();
 }
 
-void Lexer::getToken()
+void LexerV2::getToken()
 {
-    std::cout<<"----------Init Lexer----------"<<std::endl;
+    std::cout<<"----------Init LexerV2----------"<<std::endl;
     while(file.peek() != EOF )
     {
         Token res = getNextToken();
@@ -32,31 +32,25 @@ void Lexer::getToken()
     file.close();
 }
 
-Token Lexer::getNextToken()
+Token LexerV2::getNextToken()
 { 
     tk = "";
-    comment = "";
     while(1) 
     {
         if(currCh == ' ' || currCh == '\t' || currCh == '\n')
         {
-            //std::cout<<"Consumiendo Espacio"<<std::endl;
             currCh = getNextChar();
             continue;
         }
         else if(currCh == '/')
         {
-            std::cout<<"Else if /"<<std::endl;
             currCh = getNextChar();
             if(currCh == '/')
             {
                 while(currCh != '\n')
                 {
                     currCh = getNextChar();
-                    comment += char(currCh);
                 }   
-                //std::cout<<"Comment: "<<comment<<std::endl;
-                comment = "";
                 continue;
             }
             else if(currCh == '*')
@@ -77,75 +71,54 @@ Token Lexer::getNextToken()
                     {
                         return Token::Eof;
                     }
-                    comment += char(currCh);
                 }   
-                //std::cout<<"Comment type 2: "<<comment<<std::endl;
-                comment = "";
                 continue;
             }   
         }
         else if(isdigit(currCh) && currCh != '0')
         {
-            //printf("%c",currCh);
-            //std::cout<<" - Prefijo Digito"<<std::endl;
-            
             tk += char(currCh);
             currCh = getNextChar();
-            
-            while(isdigit(currCh))
-            {
-                //printf("%c",currCh);
-                //std::cout<<" - Repeticion Digito"<<std::endl;
-                tk += char(currCh);
-                currCh = getNextChar();
-            }
+            std::string s = getSequence(isdigit);
+            tk += s;
+            if(s.empty())
+                return Token::Unknown;
             return Token::Decimal;
+            
         }
         else if(currCh == '0')
         {
-            //printf("%c",currCh);
-            //std::cout<<" - Prefijo 0"<<std::endl;
-            
             tk += char(currCh);
             currCh = getNextChar();
             
             if(currCh == 'x' || currCh == 'X')
             {
-                tk += currCh;
+                tk += char(currCh);
                 currCh = getNextChar();
-                while(isxdigit(currCh))
-                {
-                    //printf("%c",currCh);
-                    //std::cout<<" - Repeticion Hexadecimal"<<std::endl;
-                    tk += char(currCh);
-                    currCh = getNextChar();
-                }
+                std::string s = getSequence(isxdigit);
+                tk += s;
+                if(s.empty()) 
+                    return Token::Unknown;
                 return Token::Hexadecimal;
             }
             else if(currCh == 'b' || currCh == 'B')
             {
-                tk += currCh;
+                tk += char(currCh);
                 currCh = getNextChar();
-                while(currCh == '1' || currCh == '0')
-                {
-                    //printf("%c",currCh);
-                    //std::cout<<" - Repeticion Binario"<<std::endl;
-                    tk += char(currCh);
-                    currCh = getNextChar();
-                }
+                std::string s = getSequence([](char ch) { return ch == '0' || ch == '1'; } );
+                tk += s;
+                if(s.empty())
+                    return Token::Unknown;
                 return Token::Binario;
             }
             else if(currCh > 48 && currCh <=55)
-            {
-                tk += currCh;
+            {   
+                tk += char(currCh);
                 currCh = getNextChar();
-                while(currCh >= 48 && currCh <=57)
-                {
-                    //printf("%c",currCh);
-                    //std::cout<<" - Repeticion Octal"<<std::endl;
-                    tk += char(currCh);
-                    currCh = getNextChar();
-                }
+                std::string s = getSequence([](char ch) { return ch == '0' || ch == '1'; } );
+                tk += s; 
+                if(s.empty())
+                    return Token::Unknown;
                 return Token::Octal;
             }
             else
@@ -155,7 +128,6 @@ Token Lexer::getNextToken()
         }
         else
         {
-            //std::cout<<"Token is unknown"<<std::endl;
             tk += char(currCh);
             currCh = getNextChar();
             return Token::Unknown;
@@ -164,8 +136,7 @@ Token Lexer::getNextToken()
     }
 }
 
-
-std::string Lexer::TokenValue(Token t)
+std::string LexerV2::TokenValue(Token t)
 {
     if(t == Token::Decimal)
         return "Decimal";
@@ -180,9 +151,3 @@ std::string Lexer::TokenValue(Token t)
     else
         return "Unknown";
 }
-
-
-/*std::string getSequence(std::function <bool(char)>func)
-{
-    
-}*/
