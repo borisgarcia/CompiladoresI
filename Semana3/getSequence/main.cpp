@@ -1,4 +1,4 @@
-#include "Lexer.h"
+#include "LexerV2.h"
 
 int main( int argc, char * argv [] )
 {
@@ -8,7 +8,7 @@ int main( int argc, char * argv [] )
         return 1;
     }
 
-    Lexer lexer(argv[1]);
+    LexerV2 lexer(argv[1]);
     lexer.getToken();
         
     return 0;
