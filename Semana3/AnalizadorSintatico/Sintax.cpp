@@ -4,6 +4,11 @@ void Sintax::initParser()
 {
     token = lexer.getNextToken();
     E();
+    token = lexer.getNextToken();
+    if(token != Token::Eof)
+    {
+        throw std::invalid_argument( "\nSintax Error" );
+    }
 }
 
 void Sintax::E()
@@ -53,10 +58,8 @@ void Sintax::Tp()
 void Sintax::F()
 {
     //std::cout << "F" << '\n';
-    //std::cout << "Hi" << '\n';
     if(token == Token::OpenPar)
     {
-        //std::cout << "Hi2" << '\n';
         token = lexer.getNextToken();
         E();
         
@@ -71,10 +74,6 @@ void Sintax::F()
     }
     else
     {
-        throw std::invalid_argument( "\nUnexpected" );
+        throw std::invalid_argument( "\nSintax Error" );
     }
-
 }
-
-
-

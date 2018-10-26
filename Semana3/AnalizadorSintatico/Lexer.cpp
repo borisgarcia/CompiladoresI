@@ -37,7 +37,11 @@ Token Lexer::getNextToken()
     tk = "";
     while(1) 
     {
-        if(currCh == ' ' || currCh == '\t' || currCh == '\n')
+        if(currCh == EOF)
+        {
+            return Token::Eof;
+        }
+        else if(currCh == ' ' || currCh == '\t' || currCh == '\n')
         {
             currCh = getNextChar();
             continue;
@@ -117,7 +121,6 @@ Token Lexer::getNextToken()
         {
             return Token::Unknown;
         }
-    
     }
 }
 
