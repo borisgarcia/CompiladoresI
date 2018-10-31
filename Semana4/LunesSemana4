@@ -1,0 +1,27 @@
+Con Recursion por la izquierda
+
+E -> E+T
+    | T
+
+T -> T * F
+    | F
+
+F -> Num
+    | (E)
+
+
+Sin Recursion por la izquierda
+
+T es el prefijo, todas las cadenas va empezar con T
+
+E -> T (+T)*
+
+T -> F (*F)*
+
+F -> Num
+    | (E)
+
+
+1 + 2 * 3
+
+E -> T + T -> 1 + F * F -> 1 + 2 * 3
