@@ -1,0 +1,3 @@
+/home/boris/Escritorio/CompiladoresI/Semana4/Parser_Tabla_Evaluador/build/CMakeFiles/edit_cache.dir
+/home/boris/Escritorio/CompiladoresI/Semana4/Parser_Tabla_Evaluador/build/CMakeFiles/rebuild_cache.dir
+/home/boris/Escritorio/CompiladoresI/Semana4/Parser_Tabla_Evaluador/build/CMakeFiles/Sintactico.dir

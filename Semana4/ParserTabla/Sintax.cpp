@@ -45,8 +45,6 @@ void Sintax::initParser()
         mystack.pop_back();
         for(int a = Table[x][y].size();a>0;a--)
             mystack.push_back(Table[x][y].at(a-1));
-        
-        if(cont == 15) break;
     }
     
     if(mystack.size()!=0)

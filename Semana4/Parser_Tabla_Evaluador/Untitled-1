@@ -1,0 +1,10 @@
+Enum Symbol 
+
+
+enum class symbol : unsigned int
+static_cast<unsigned int>(s)
+
+lexer return symbol 
+utilizar nullptr
+
+
