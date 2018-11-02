@@ -1,0 +1,20 @@
+Grammar
+=======
+
+input -> stmt_list ;
+
+stmt_list -> stmt_list ; stmt
+            | stmt
+
+stmt -> IDENT = expr
+        | PRINT expr
+
+expr -> expr + term
+        | term
+
+term -> term * factor
+        | factor
+
+factor -> IDENT
+        | NUMBER
+        | ( expr )
