@@ -1,0 +1,12 @@
+input -> expr_list
+expr_list -> expr_list expr ;
+expr_list -> ''
+expr -> expr + term
+expr -> expr - term
+expr -> term
+term -> term * factor
+term -> term / factor
+term -> factor
+factor -> IDENT
+factor -> NUMBER
+factor -> ( expr )

@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/SLR.dir/Parser.cpp.o CMakeFiles/SLR.dir/Lexer.cpp.o CMakeFiles/SLR.dir/main.cpp.o  -o SLR -rdynamic 

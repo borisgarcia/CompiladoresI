@@ -1,0 +1,3 @@
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/build/CMakeFiles/rebuild_cache.dir
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/build/CMakeFiles/edit_cache.dir
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/build/CMakeFiles/SLR.dir

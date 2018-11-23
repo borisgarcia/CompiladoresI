@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/Lexer.cpp
+Lexer.h
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/Lexer.h
+
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/Lexer.h
+ctype.h
+-
+iostream
+-
+fstream
+-
+string
+-
+functional
+-
+
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/Parser.cpp
+Parser.h
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/Parser.h
+
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/Parser.h
+Lexer.h
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/Lexer.h
+vector
+-
+utility
+-
+deque
+-
+
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/main.cpp
+Parser.h
+/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLR/Parser.h
+

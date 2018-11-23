@@ -4,17 +4,17 @@ Grammar
 input -> stmt_list ;
 
 stmt_list -> stmt_list ; stmt
-            | stmt
+stmt_list -> stmt
 
 stmt -> IDENT = expr
-        | PRINT expr
+stmt -> PRINT expr
 
 expr -> expr + term
-        | term
+expr -> term
 
 term -> term * factor
-        | factor
+term -> factor
 
 factor -> IDENT
-        | NUMBER
-        | ( expr )
+factor -> NUMBER
+factor -> ( expr )
