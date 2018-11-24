@@ -1,0 +1,4 @@
+/home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles/test.dir
+/home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles/rebuild_cache.dir
+/home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles/edit_cache.dir
+/home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles/slr_gen.dir

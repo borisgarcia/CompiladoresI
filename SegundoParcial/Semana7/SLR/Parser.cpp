@@ -22,14 +22,11 @@ void Parser::initParser()
     Act currAction;
     Token currState = Token::state0;
     struct pair temp;
-    int cont;
+    int a=0;
     while (currAction != Act::ACC)
     {
-        for (size_t i = 0; i < stack.size(); i++) std::cout << toString( stack.at(i))<< " ";
-        std::cout << " | ";
-
-        for (size_t i = 0; i < input.size(); i++) std::cout << toString(input.at(i));
-        std::cout << '\n';
+        for (size_t i = 0; i < stack.size(); i++) std::cout << toString( stack.at(i))<< " ";std::cout << " | ";
+        for (size_t i = 0; i < input.size(); i++) std::cout << toString(input.at(i));std::cout << '\n';
 
         currInput = input.front();
         currStack = stack.back();
@@ -43,37 +40,39 @@ void Parser::initParser()
                 stack.push_back(currState);
             }
             else
-            {
                 throw std::invalid_argument("Error");
-            }
         }
         else
         {
             if(temp.act == Act::R)
             {
-                /*int find = 0;
+                int find = 0;
                 int cont = 0;
                 for (size_t i = stack.size()-1; i > 0; i--)
                 {
-                    if(stack.back() == stack.at(i) && i != stack.size()-1)
+                    if(temp.tok == stack.at(i))
                     {
                         find = 1;
                         break;
                     }    
                     cont++;
-                } 
-                if(find = 0)
-                { */
+                }
+                if(!find)
+                { 
                     stack.pop_back();
                     stack.pop_back();
                     currState = stack.back();
                     stack.push_back(temp.tok);
-                /*}
+                }
                 else
                 {
                     for(int x = 0;x<cont;x++)
+                    {
+                        currState = stack.back();
                         stack.pop_back();
-                }*/
+                    }
+                    stack.push_back(currState);
+                }
             }
             else if(temp.act == Act::S)
             {
@@ -84,8 +83,7 @@ void Parser::initParser()
             }
             else if(temp.act == Act::ACC)
                 break;
-        }
-        
+        }       
     }
 }
 

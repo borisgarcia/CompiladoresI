@@ -111,5 +111,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Sintactico.dir/DependInfo.cmake"
+  "CMakeFiles/slr_gen.dir/DependInfo.cmake"
   )

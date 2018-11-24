@@ -1,3 +1,0 @@
-/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build/CMakeFiles/edit_cache.dir
-/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build/CMakeFiles/rebuild_cache.dir
-/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build/CMakeFiles/Sintactico.dir

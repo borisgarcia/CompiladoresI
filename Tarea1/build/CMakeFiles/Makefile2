@@ -54,45 +54,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse
+CMAKE_SOURCE_DIR = /home/boris/Escritorio/CompiladoresI/Clase/Tarea1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build
+CMAKE_BINARY_DIR = /home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/Sintactico.dir
+# Target rules for target CMakeFiles/slr_gen.dir
 
 # All Build rule for target.
-CMakeFiles/Sintactico.dir/all:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/depend
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build/CMakeFiles --progress-num=1,2,3,4 "Built target Sintactico"
-.PHONY : CMakeFiles/Sintactico.dir/all
+CMakeFiles/slr_gen.dir/all:
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/depend
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles --progress-num=1,2,3,4 "Built target slr_gen"
+.PHONY : CMakeFiles/slr_gen.dir/all
 
 # Include target in all.
-all: CMakeFiles/Sintactico.dir/all
+all: CMakeFiles/slr_gen.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Sintactico.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Sintactico.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build/CMakeFiles 0
-.PHONY : CMakeFiles/Sintactico.dir/rule
+CMakeFiles/slr_gen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/slr_gen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles 0
+.PHONY : CMakeFiles/slr_gen.dir/rule
 
 # Convenience name for target.
-Sintactico: CMakeFiles/Sintactico.dir/rule
+slr_gen: CMakeFiles/slr_gen.dir/rule
 
-.PHONY : Sintactico
-
-# clean rule for target.
-CMakeFiles/Sintactico.dir/clean:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/clean
-.PHONY : CMakeFiles/Sintactico.dir/clean
+.PHONY : slr_gen
 
 # clean rule for target.
-clean: CMakeFiles/Sintactico.dir/clean
+CMakeFiles/slr_gen.dir/clean:
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/clean
+.PHONY : CMakeFiles/slr_gen.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/slr_gen.dir/clean
 
 .PHONY : clean
 

@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++14   CMakeFiles/slr_gen.dir/main.cpp.o CMakeFiles/slr_gen.dir/grammar.cpp.o CMakeFiles/slr_gen.dir/LR0.cpp.o  -o slr_gen -rdynamic 

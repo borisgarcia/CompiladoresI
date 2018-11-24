@@ -48,24 +48,24 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse
+CMAKE_SOURCE_DIR = /home/boris/Escritorio/CompiladoresI/Clase/Tarea1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build
+CMAKE_BINARY_DIR = /home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : edit_cache/fast
+.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +78,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build/CMakeFiles /home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles /home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Clase/SegundoParcial/Semana7/SLRParse/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/boris/Escritorio/CompiladoresI/Clase/Tarea1/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,71 +122,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Sintactico
+# Target rules for targets named slr_gen
 
 # Build rule for target.
-Sintactico: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Sintactico
-.PHONY : Sintactico
+slr_gen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 slr_gen
+.PHONY : slr_gen
 
 # fast build rule for target.
-Sintactico/fast:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/build
-.PHONY : Sintactico/fast
+slr_gen/fast:
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/build
+.PHONY : slr_gen/fast
 
-Lexer.o: Lexer.cpp.o
+LR0.o: LR0.cpp.o
 
-.PHONY : Lexer.o
-
-# target to build an object file
-Lexer.cpp.o:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/Lexer.cpp.o
-.PHONY : Lexer.cpp.o
-
-Lexer.i: Lexer.cpp.i
-
-.PHONY : Lexer.i
-
-# target to preprocess a source file
-Lexer.cpp.i:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/Lexer.cpp.i
-.PHONY : Lexer.cpp.i
-
-Lexer.s: Lexer.cpp.s
-
-.PHONY : Lexer.s
-
-# target to generate assembly for a file
-Lexer.cpp.s:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/Lexer.cpp.s
-.PHONY : Lexer.cpp.s
-
-Sintax.o: Sintax.cpp.o
-
-.PHONY : Sintax.o
+.PHONY : LR0.o
 
 # target to build an object file
-Sintax.cpp.o:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/Sintax.cpp.o
-.PHONY : Sintax.cpp.o
+LR0.cpp.o:
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/LR0.cpp.o
+.PHONY : LR0.cpp.o
 
-Sintax.i: Sintax.cpp.i
+LR0.i: LR0.cpp.i
 
-.PHONY : Sintax.i
+.PHONY : LR0.i
 
 # target to preprocess a source file
-Sintax.cpp.i:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/Sintax.cpp.i
-.PHONY : Sintax.cpp.i
+LR0.cpp.i:
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/LR0.cpp.i
+.PHONY : LR0.cpp.i
 
-Sintax.s: Sintax.cpp.s
+LR0.s: LR0.cpp.s
 
-.PHONY : Sintax.s
+.PHONY : LR0.s
 
 # target to generate assembly for a file
-Sintax.cpp.s:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/Sintax.cpp.s
-.PHONY : Sintax.cpp.s
+LR0.cpp.s:
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/LR0.cpp.s
+.PHONY : LR0.cpp.s
+
+grammar.o: grammar.cpp.o
+
+.PHONY : grammar.o
+
+# target to build an object file
+grammar.cpp.o:
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/grammar.cpp.o
+.PHONY : grammar.cpp.o
+
+grammar.i: grammar.cpp.i
+
+.PHONY : grammar.i
+
+# target to preprocess a source file
+grammar.cpp.i:
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/grammar.cpp.i
+.PHONY : grammar.cpp.i
+
+grammar.s: grammar.cpp.s
+
+.PHONY : grammar.s
+
+# target to generate assembly for a file
+grammar.cpp.s:
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/grammar.cpp.s
+.PHONY : grammar.cpp.s
 
 main.o: main.cpp.o
 
@@ -183,7 +194,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -192,7 +203,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -201,7 +212,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Sintactico.dir/build.make CMakeFiles/Sintactico.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/slr_gen.dir/build.make CMakeFiles/slr_gen.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -210,15 +221,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... rebuild_cache"
-	@echo "... Sintactico"
-	@echo "... Lexer.o"
-	@echo "... Lexer.i"
-	@echo "... Lexer.s"
-	@echo "... Sintax.o"
-	@echo "... Sintax.i"
-	@echo "... Sintax.s"
+	@echo "... edit_cache"
+	@echo "... slr_gen"
+	@echo "... LR0.o"
+	@echo "... LR0.i"
+	@echo "... LR0.s"
+	@echo "... grammar.o"
+	@echo "... grammar.i"
+	@echo "... grammar.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,8 +1,9 @@
 #ifndef _LR0DFAGEN_H_
 #define _LR0DFAGEN_H_
-
+#include <iostream>
 #include <vector>
 #include "grammar.h"
+
 
 class LR0 {
 public:
@@ -64,6 +65,8 @@ public:
 
 private:
     void computeDFA();
+    void check(std::string symbol);
+    void getClosure(std::string symbol);
 
 private:
     Grammar &gr;
