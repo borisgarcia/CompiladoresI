@@ -6,6 +6,10 @@ input -> stmt_list ;
 stmt_list -> stmt_list ; stmt
 stmt_list -> stmt
 
+stmt_list -> stmt p_stmt_list
+p_stmt_list -> stmt_list
+p_stmt_list -> ''
+
 stmt -> IDENT = expr
 stmt -> PRINT expr
 
@@ -18,3 +22,5 @@ term -> factor
 factor -> IDENT
 factor -> NUMBER
 factor -> ( expr )
+
+WHILE ( IDENT = IDENT ) { IDENT = IDENT ; WHILE ( IDENT = IDENT ) { IDENT = IDENT ; } }
