@@ -7,23 +7,8 @@
 
 class LR0 {
 public:
-    struct temp {
-        std::string symbol;
-        int dot_position;
-        std::vector<std::string> items;
-    };
-    struct temp_0{
-        std::string symbol;
-        int dot_position;
-        std::vector<std::string> items;
-
-        std::vector<temp> closure;
-    };
-
-    temp_0 _dfa;
-
     struct Item {
-        Item(const Grammar::Production &prod, int dot_pos):
+        Item(int dot_pos):
             prod(prod), dot_pos(dot_pos) {}
 
         bool operator==(const Item& rhs) {
@@ -35,6 +20,8 @@ public:
         }
 
         const Grammar::Production &prod;
+        std::string symbol;
+        string_vector_t transitions;
         int dot_pos;
     };
 
@@ -83,8 +70,10 @@ private:
     void check(std::string symbol,string_vector_t transi);
     void getClosure(std::string symbol,int pos_dot,string_vector_t transi);
     int check_is_term(std::string symbol);
-    void search_non_term(std::string nonTerm);
+    void search_non_term(std::string nonTerm,State &state);
     int not_checked(std::string symbol);
+    void printDFA();
+
 private:
     Grammar &gr;
     DFA dfa;
