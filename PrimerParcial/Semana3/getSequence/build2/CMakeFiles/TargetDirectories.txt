@@ -1,3 +1,0 @@
-/home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build2/CMakeFiles/edit_cache.dir
-/home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build2/CMakeFiles/rebuild_cache.dir
-/home/boris/Escritorio/CompiladoresI/Semana3/TrabajoEnClase/build2/CMakeFiles/Test1.dir

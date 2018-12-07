@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/Test1.dir/Lexer.cpp.o CMakeFiles/Test1.dir/main.cpp.o  -o Test1 -rdynamic 

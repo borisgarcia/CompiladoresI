@@ -1,3 +1,0 @@
-/home/boris/Escritorio/CompiladoresI/Semana4/AnalizadorSintatico/build/CMakeFiles/edit_cache.dir
-/home/boris/Escritorio/CompiladoresI/Semana4/AnalizadorSintatico/build/CMakeFiles/rebuild_cache.dir
-/home/boris/Escritorio/CompiladoresI/Semana4/AnalizadorSintatico/build/CMakeFiles/Sintactico.dir
